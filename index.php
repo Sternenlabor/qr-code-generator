@@ -40,12 +40,14 @@ if (verifyRecaptcha($recaptcha_token, $recaptcha_secret)) {
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Ampelsystem / Wiki - QR Code Generator – Sternenlabor</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 </head>
 
 <body>
 
     <div id="qr-code-generator">
-        <h1>Ampelsystem / Wiki -  QR Code Generator</h1>
+        <h1>Ampelsystem / Wiki - QR Code Generator</h1>
 
         <div id="logo"></div>
 
