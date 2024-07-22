@@ -1,0 +1,320 @@
+:root {
+    --primary-color: #99c430;
+    --secondary-color: #fff;
+    --tertiary-color: #0065a3;
+    --quaternary-color: #eb6207;
+    --quinary-color: #4b4a4a;
+
+    --primary-color-print: #66ffde;
+    --secondary-color-print: #303d3e;
+    --inline-start: left;
+    --main-color: rgb(249 249 250);
+    --toolbar-button-print-icon: url(/images/toolbar-button-print.svg);
+    --toolbar-button-download-icon: url(/images/toolbar-button-download.svg);
+    --toolbar-button-pageUp-icon: url(/images/toolbar-button-pageUp.svg);
+    --toolbar-button-pageDown-icon: url(/images/toolbar-button-pageDown.svg);
+    --toolbar-icon-opacity: 0.7;
+    --toolbar-icon-bg-color: rgb(255 255 255);
+    --toolbar-fg-color: rgb(255 255 255);
+    --button-hover-color: rgb(102 102 103);
+}
+
+/* WEBFONT */
+/* jura-300 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Jura';
+    font-style: normal;
+    font-weight: 300;
+    src: url('/fonts/jura-v31-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* jura-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Jura';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/jura-v31-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* jura-500 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Jura';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/fonts/jura-v31-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* jura-600 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Jura';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/fonts/jura-v31-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* jura-700 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Jura';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/jura-v31-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+html {
+    background-color: var(--secondary-color);
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Jura', Arial, sans-serif;
+    line-height: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-color);
+    height: 100%;
+    overflow: auto;
+}
+
+#qr-code-generator {
+    float: none;
+    width: 80%;
+    min-height: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px 20px 20px;
+    background-color: white;
+    background-image: url('/images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#generator {
+    display: grid;
+    width: 100%;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+h1 {
+    display: inline-block;
+    width: auto;
+    max-width: 900px;
+    margin: 0 auto 0 -20px;
+    color: var(--secondary-color);
+    background: linear-gradient(120deg, var(--primary-color) 0%, var(--primary-color) calc(100% - 22px), rgba(0, 0, 0, 0) calc(100% - 22px), rgba(0, 0, 0, 0) 100%);
+    padding: 8px 40px 10px 20px;
+    font-size: 14px;
+    font-family: 'Jura', sans-serif;
+    line-height: 1.5rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: default;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#logo {
+    background-image: url(/images/sternenlabor_logo.svg);
+    width: 100%;
+    height: 100px;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#re-captcha-form {
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.g-recaptcha {
+    margin: 0 auto;
+    width: auto;
+    display: inline-block;
+}
+
+#re-captcha-form input[type='submit' i] {
+    border: 0;
+    margin: 50px;
+    height: auto;
+}
+
+.btn {
+    color: var(--secondary-color);
+    display: inline-block;
+    width: auto;
+    height: 22px;
+    margin: 0 auto 0 0;
+    background: linear-gradient(120deg, var(--quaternary-color) 0%, var(--quaternary-color) calc(100% - 22px), rgba(0, 0, 0, 0) calc(100% - 22px), rgba(0, 0, 0, 0) 100%);
+    padding: 8px 40px 10px 20px;
+    font-size: 14px;
+    font-family: 'Jura', sans-serif;
+    line-height: 1.5rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.btn:hover {
+    background: linear-gradient(120deg, var(--quinary-color) 0%, var(--quinary-color) calc(100% - 22px), rgba(0, 0, 0, 0) calc(100% - 22px), rgba(0, 0, 0, 0) 100%);
+}
+
+#qr-code-wrapper {
+    float: none;
+    width: auto;
+    position: relative;
+    height: 800px;
+}
+
+#qr-code-wrapper * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#qr-code-wrapper * {
+    font-size: 12px;
+}
+
+#qr-code-wrapper textarea {
+    text-align: center;
+    font-family: arial;
+    height: 100%;
+}
+
+#qr-code-wrapper input[type='number'],
+#qr-code-wrapper input[type='color'] {
+    width: 5em;
+}
+
+#qr-code-wrapper input[type='number'] {
+    padding: 0.25em;
+    text-align: right;
+}
+
+#qr-code-wrapper select {
+    width: 9em;
+    font-size: 11px;
+    padding: 0.25em 0.2em;
+}
+
+#qr-code-wrapper option {
+    padding: 0.25em 0.2em;
+}
+
+@media (max-width: 900px) {
+    #logo {
+        margin-top: 30px;
+    }
+
+    #generator {
+        grid-template-columns: 1fr;
+        grid-auto-flow: row dense;
+    }
+
+    preview-box {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    settings-form {
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    #download-svg {
+        grid-row: 3;
+        grid-column: 1;
+    }
+}
+
+@media (min-width: 900px) {
+    #logo {
+        margin-top: 0;
+    }
+
+    #generator {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 380px auto;
+    }
+    
+    preview-box {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    settings-form {
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    #download-svg {
+        grid-row: 2;
+        grid-column: 2;
+    }
+}
+
+@media (min-width: 1024px) {
+    #logo {
+        margin-top: 0;
+    }
+
+    #generator {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 380px auto;
+    }
+
+    preview-box {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    settings-form {
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    #download-svg {
+        grid-row: 2;
+        grid-column: 2;
+    }
+}
+
+@media (min-width: 1600px) {
+    #logo {
+        margin-top: 0;
+    }
+
+    #generator {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 380px auto;
+    }
+
+    preview-box {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    settings-form {
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    #download-svg {
+        grid-row: 2;
+        grid-column: 2;
+    }
+}

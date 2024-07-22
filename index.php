@@ -38,10 +38,12 @@ if (verifyRecaptcha($recaptcha_token, $recaptcha_secret)) {
 <html lang="de-DE">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Ampelsystem / Wiki - QR Code Generator – Sternenlabor</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="stylesheet" href="/src/style.css" media="all" />
 </head>
 
 <body>
@@ -63,40 +65,23 @@ if (verifyRecaptcha($recaptcha_token, $recaptcha_secret)) {
         <?php else : ?>
 
             <div id="generator">
-                <div id="preview-box">
-                    <div id="box" data-title="Vorschau"></div>
-                </div>
 
-                <h3 id="settings-title">QR Code Settings</h3>
-                <div class="set" id="color-set">
+                <preview-box value="" color="#ff0000" size="25"></preview-box>
 
-                    <label for="color-select">Farbe</label>
-
-                    <input id="color-select" type="color" value="#ff0000" list="predefined" />
-                    <datalist id="predefined">
-                        <option>#ff0000</option>
-                        <option>#fff000</option>
-                        <option>#00ff00</option>
-                    </datalist>
-
-                </div>
-                <div class="set" id="url-set">
-                    <label for="url">Wiki URL</label>
-                    <textarea id="url" rows="4"></textarea>
-                </div>
+                <settings-form url="https://wiki.sternenlabor.de/doku.php?id=bereiche:elektronik:geraete:oszilloskop_ut2042c" color="#ff0000"></settings-form>
 
                 <div class="btn" id="download-svg">Download QR Code als SVG</div>
+
             </div>
 
         <?php endif; ?>
 
     </div>
 
-    <link rel="stylesheet" href="./styles/style.css" type="text/css" media="all" />
-
     <?php if (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] === true) : ?>
-        <script src="./scripts/qrcode.min.js"></script>
-        <script src="./scripts/main.mjs" type="module"></script>
+        <script defer src="/src/PreviewBox.mjs" type="module"></script>
+        <script defer src="/src/SettingsForm.mjs" type="module"></script>
+        <script src="/index.mjs" type="module"></script>
     <?php endif; ?>
 </body>
 

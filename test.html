@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="de-DE">
+    <head>
+        <title>Ampelsystem / Wiki - QR Code Generator – Sternenlabor</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="stylesheet" href="/src/style.css" media="all" />
+    </head>
+
+    <body>
+        <div id="qr-code-generator">
+            <h1>Ampelsystem / Wiki - QR Code Generator</h1>
+
+            <div id="logo"></div>
+
+            <div id="generator">
+                
+                <preview-box value="" color="#ff0000" size="25"></preview-box>
+
+                <settings-form url="https://wiki.sternenlabor.de/doku.php?id=bereiche:elektronik:geraete:oszilloskop_ut2042c" color="#ff0000"></settings-form>
+
+                <div class="btn" id="download-svg">Download QR Code als SVG</div>
+
+            </div>
+        </div>
+
+        <script defer src="/src/PreviewBox.mjs" type="module"></script>
+        <script defer src="/src/SettingsForm.mjs" type="module"></script>
+        <script src="/index.mjs" type="module"></script>
+    </body>
+</html>
