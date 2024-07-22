@@ -13,12 +13,6 @@ form.addEventListener('change', (e) => {
     box.update()
 })
 
-/*
-document.querySelector('#download-qr-code-png').addEventListener('click', () => PNGRenderer.downloadPNG(form.machineID, form.size))
-document.querySelector('#add-qr-code-to-page').addEventListener('click', () => PDFRenderer.addToPDF(form.machineID, form.size))
-document.querySelector('#download-pdf').addEventListener('click', () => PDFRenderer.downloadPDF())
-*/
-
 box.setAttribute('value', form.url)
 box.setAttribute('color', form.color)
 box.setAttribute('size', form.size)
