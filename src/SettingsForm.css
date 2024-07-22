@@ -29,13 +29,14 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    gap: 10px;
+    column-gap: 10px;
+    flex-flow: wrap;
+    row-gap: 0;
 }
 
 .group-2 {
     padding-top: 0;
     padding-bottom: 0;
-    display: block;
 }
 
 #url {
