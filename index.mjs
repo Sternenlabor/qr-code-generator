@@ -1,6 +1,6 @@
 import UrlHandler from '/src/UrlHandler.mjs'
 import SVGRenderer from '/src/SVGRenderer.mjs'
-//import PNGRenderer from '/src/PNGRenderer.mjs'
+import PNGRenderer from '/src/PNGRenderer.mjs'
 //import PDFRenderer from '/src/PDFRenderer.mjs'
 
 const box = document.querySelector('preview-box')
@@ -25,7 +25,11 @@ box.setAttribute('size', form.size)
 box.update()
 
 document.querySelector('#download-svg').addEventListener('click', async () => {
-    
     const shortUrl = await UrlHandler.fetchShortenedUrlWithRetry(form.url)
     SVGRenderer.downloadSVG(shortUrl, form.color, form.size)
+})
+
+document.querySelector('#download-png').addEventListener('click', async () => {
+    const shortUrl = await UrlHandler.fetchShortenedUrlWithRetry(form.url)
+    PNGRenderer.downloadPNG(shortUrl, form.color, form.size)
 })

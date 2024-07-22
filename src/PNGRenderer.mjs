@@ -11,7 +11,9 @@ const SVG_PIXEL_HEIGHT = 108.0
 const SVG_PIXEL_WIDTH = 197.0
 
 export default class PNGRenderer {
-    static async downloadPNG(machineID, height, width = null) {
+    static async downloadPNG(url, color, height, width = null) {
+        console.log('Short URL:', url)
+
         const n = Utils.getFilename('png')
 
         const inches = parseFloat(height) /* mm */ / 25.4 // There are 25.4 millimeters in an inch
@@ -21,7 +23,7 @@ export default class PNGRenderer {
         const heightPx = Math.round(pixelHeight)
         const widthPx = Math.round(pixelWidth)
 
-        const svgCode = SVGRenderer.getCode(machineID, heightPx, widthPx)
+        const svgCode = SVGRenderer.getCode(url, color, heightPx, widthPx)
 
         const c = new OffscreenCanvas(widthPx, heightPx)
         const ctx = c.getContext('2d')

@@ -70,7 +70,10 @@ if (verifyRecaptcha($recaptcha_token, $recaptcha_secret)) {
 
                 <settings-form url="https://wiki.sternenlabor.de/doku.php?id=bereiche:elektronik:geraete:oszilloskop_ut2042c" color="#ff0000"></settings-form>
 
-                <div class="btn" id="download-svg">Download QR Code als SVG</div>
+                <div class="download-buttons">
+                    <div class="btn" id="download-svg">Download QR Code als SVG</div>
+                    <div class="btn" id="download-png">Download QR Code als PNG</div>
+                </div>
 
             </div>
 
